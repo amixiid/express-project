@@ -47,3 +47,19 @@ Test connection via Mongoose in Express app.
 ```
 ---
 ## 11. Deployment on Vercel
+---
+## how to use
+```bash
+npm run dev   
+```
+---
+## my rootes
+| Method | Endpoint         | Description           |
+| ------ | ---------------- | --------------------- |
+| POST   | `/api/users/`    | Create a new user     |
+| GET    | `/api/users/`    | Get all users         |
+| GET    | `/api/users/:id` | Get single user by ID |
+| PUT    | `/api/users/:id` | Update user by ID     |
+| DELETE | `/api/users/:id` | Delete user by ID     |
+
+
