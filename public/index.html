@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Login Form</h2>
+    <form action="" autocomplete="off">
+      <input id="username" placeholder="Username" />
+      <input id="password" placeholder="Password" />
+      <button onclick="sendData()">Submit</button>
+    </form>
+
+    <script>
+      function sendData() {
+        // Payload
+        const data = {
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        };
+
+        // data obj ----> express server
+        fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "content-Type": "application/json" },
+          body: JSON.stringify(data), //convert data obj(js obj) ---> JSON
+        })
+          .then((res) => res.text())
+          .then((msg) => alert(msg));
+      }
+    </script>
+  </body>
+</html>
